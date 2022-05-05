@@ -24,6 +24,14 @@ header {
 
 /* MENU */
 
+.button-menu {
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .menu ul {
   height: 37px;
   margin: 0;
@@ -56,7 +64,7 @@ header {
 
 /* SEARCHBAR */
 
-.champ {
+.search {
   height: 40px;
   width: 500px;
   border-radius: 10px;
@@ -80,4 +88,29 @@ header {
   background-color: #0cadb7;
   border: none;
   color: white;
+}
+
+/* BANNIERE */
+
+.bannière {
+  height: 490px;
+}
+
+.image-centrale {
+  height: 428px;
+  width: 100%;
+}
+
+.grid {
+  border: 2px solid black;
+  width: 1240px;
+  margin-left: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.offer {
+  width: 197px;
+  height: 385px;
 }

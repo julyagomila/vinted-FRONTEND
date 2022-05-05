@@ -2,7 +2,7 @@ const Header = () => {
   return (
     <header>
       <div className="left-part">
-        <img className="logo-vinted" rc="/images/logo-vinted-bis.jpeg" />
+        <img className="logo-vinted" src="src/images/logo-vinted-bis.jpeg" />
 
         <button className="button-menu">
           <div className="menu">
@@ -41,19 +41,21 @@ const Header = () => {
         <div className="searchbar">
           <form action="" className="formulaire">
             <input
-              className="champ"
+              className="search"
               type="text"
-              value=""
-              placeholder="Recherche des articles"
+              placeholder="Rechercher un article"
+              value={""}
             />
           </form>
         </div>
       </div>
 
       <div className="right-part">
-        <button className="buttons-header">S'inscrire</button>
+        <Link to="/signup">
+          <button className="buttons-header">S'inscrire</button>
+        </Link>
         <button className="buttons-header">Se connecter</button>
-        <button className="button-header">Vendre ses articles</button>
+        <button className="buttons-header">Vendre ses articles</button>
       </div>
     </header>
   );
