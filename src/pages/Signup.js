@@ -4,8 +4,7 @@ import axios from "axios";
 // import { Link } from "react-router-dom";
 
 const Signup = () => {
-  const [data, setData] = useState();
-  const [isLoading, setIsLoading] = useState(true);
+  //   const [isLoading, setIsLoading] = useState(true);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,24 +23,22 @@ const Signup = () => {
     event.preventDefault(); // Pour empêcher le navigateur de changer de page lors de la soumission du formulaire
     console.log(email, password);
 
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await axios.post(
-            "https://lereacteur-vinted-api.herokuapp.com/user/signup"
-          );
-          setData(response.data);
-          setIsLoading(false);
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      fetchData();
-    }, []);
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //     try {
+    //       const response = await axios.post(
+    //         "https://lereacteur-vinted-api.herokuapp.com/user/signup"
+    //       );
+    //       setData(response.data);
+    //       setIsLoading(false);
+    //     } catch (error) {
+    //       console.log(error);
+    //     }
+    //   };
+    //   fetchData();
+    // }, []);
 
-    return isLoading === true ? (
-      <div>En cours de chargement...</div>
-    ) : (
+    return (
       <div>
         <h1>S'inscrire</h1>
         <form onSubmit={handleSubmit}>
