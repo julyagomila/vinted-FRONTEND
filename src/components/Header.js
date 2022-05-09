@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
-const Header = () => {
+import logoVinted from "../assets/images/logo-vinted-bis.jpeg";
+
+const Header = ({ token, setUser }) => {
+  const navigate = useNavigate();
+
   return (
     <header>
-      <div className="left-part">
-        <img className="logo-vinted" src="src/images/logo-vinted-bis.jpeg" />
+      {/* <div className="left-part">
+        <img className="logo-vinted" src={logoVinted} />
 
         <button className="button-menu">
           <div className="menu">
@@ -49,14 +53,33 @@ const Header = () => {
             />
           </form>
         </div>
-      </div>
+      </div> */}
 
       <div className="right-part">
-        <Link to="/signup">
-          <button className="buttons-header">S'inscrire</button>
-        </Link>
-        <button className="buttons-header">Se connecter</button>
-        <button className="buttons-header">Vendre ses articles</button>
+        {token === null ? (
+          <div>
+            <Link to="/signup">
+              <button className="buttons-header">S'inscrire</button>
+            </Link>
+            <Link to="/login">
+              <button className="buttons-header"> Se connecter </button>
+            </Link>
+          </div>
+        ) : (
+          <button
+            onClick={() => {
+              //Je me déconnecte et je redirige l'utilsateur vers la home page
+              setUser(null);
+              navigate("/");
+            }}
+          >
+            Se déconnecter
+          </button>
+        )}
+        <div>
+          {" "}
+          <button className="buttons-header">Vendre ses articles</button>
+        </div>
       </div>
     </header>
   );
