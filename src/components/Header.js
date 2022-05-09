@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import logoVinted from "../assets/images/logo-vinted-bis.jpeg";
 
 const Header = ({ token, setUser }) => {
@@ -6,7 +7,7 @@ const Header = ({ token, setUser }) => {
 
   return (
     <header>
-      {/* <div className="left-part">
+      <div className="left-part">
         <img className="logo-vinted" src={logoVinted} />
 
         <button className="button-menu">
@@ -53,7 +54,7 @@ const Header = ({ token, setUser }) => {
             />
           </form>
         </div>
-      </div> */}
+      </div>
 
       <div className="right-part">
         {token === null ? (

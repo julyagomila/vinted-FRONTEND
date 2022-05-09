@@ -7,7 +7,7 @@ import axios from "axios";
 // COMPOSANT
 import Header from "../components/Header";
 
-const Signup = (setUser) => {
+const Signup = ({ setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -49,6 +49,7 @@ const Signup = (setUser) => {
       }
     }
   };
+
   return (
     <div>
       <Header />
@@ -85,7 +86,7 @@ const Signup = (setUser) => {
         />
         <br />
         <input type="submit" value="S'inscrire" />
-        <p style={{ color: "red" }}>{errorMessage}</p>
+        <p>{errorMessage}</p>
       </form>
     </div>
   );
