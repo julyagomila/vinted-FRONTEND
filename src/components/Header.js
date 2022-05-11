@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
 import logoVinted from "../assets/images/logo-vinted-bis.jpeg";
 
 const Header = ({ token, setUser }) => {
@@ -8,8 +9,9 @@ const Header = ({ token, setUser }) => {
   return (
     <header>
       <div className="left-part">
-        <img className="logo-vinted" src={logoVinted} />
-
+        <Link to="/home">
+          <img className="logo-vinted" src={logoVinted} />
+        </Link>
         <button className="button-menu">
           <div className="menu">
             <ul>
@@ -45,14 +47,11 @@ const Header = ({ token, setUser }) => {
         </button>
 
         <div className="searchbar">
-          <form action="" className="formulaire">
-            <input
-              className="search"
-              type="text"
-              placeholder="Rechercher un article"
-              value={""}
-            />
-          </form>
+          <input
+            className="search"
+            type="text"
+            placeholder="Rechercher un article"
+          />
         </div>
       </div>
 
@@ -79,7 +78,9 @@ const Header = ({ token, setUser }) => {
         )}
         <div>
           {" "}
-          <button className="buttons-header">Vendre ses articles</button>
+          <Link to={"/publish"}>
+            <button className="buttons-header">Vendre ses articles</button>
+          </Link>
         </div>
       </div>
     </header>

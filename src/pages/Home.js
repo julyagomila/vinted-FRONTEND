@@ -18,7 +18,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://lereacteur-vinted-api.herokuapp.com/offers?limit=3&page=${page}`
+          `https://lereacteur-vinted-api.herokuapp.com/offers?limit=20&page=${page}`
         );
         setData(response.data);
         setIsLoading(false);
@@ -37,10 +37,8 @@ const Home = () => {
       <div className="bannière">
         <img className="image-centrale" src={imageCentrale} />
       </div>
+      <span className="span-home">FIL D'ACTUALITÉS</span>
       <section className="grid">
-        <span>FIL D'ACTUALITÉS</span>
-        <button onClick={() => setPage(page - 1)}>Page précédente</button>
-        <button onClick={() => setPage(page + 1)}>Page suivante</button>
         {data.offers.map((offer) => {
           return (
             <Link to={`/offer/${offer._id}`} key={offer._id}>
@@ -57,6 +55,14 @@ const Home = () => {
           );
         })}
       </section>
+      <div className="pages">
+        <button className="button-pages" onClick={() => setPage(page - 1)}>
+          Page précédente
+        </button>
+        <button className="button-pages" onClick={() => setPage(page + 1)}>
+          Page suivante
+        </button>
+      </div>
     </div>
   );
 };

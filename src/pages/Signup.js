@@ -52,7 +52,6 @@ const Signup = ({ setUser }) => {
 
   return (
     <div>
-      <Header />
       <h1>Sign up </h1>
       <form onSubmit={handleSignup}>
         <input

@@ -23,7 +23,7 @@ const Login = ({ setUser }) => {
       if (response.data.token) {
         setUser(response.data.token);
         // redirection
-        navigate("/");
+        navigate("/home");
       }
     } catch (error) {
       console.log(error.message);
